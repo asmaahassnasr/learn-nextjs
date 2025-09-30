@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { error } from 'console';
 
 interface IProps{
   params:{
@@ -9,6 +10,8 @@ interface IProps{
 
 export default async function ProductDetailsPage({params}: IProps) {
 
+  throw new Error("Something went wrong");
+  
   const { id } = await params
 
   const data = await fetch(`https://dummyjson.com/products/${id}`)
