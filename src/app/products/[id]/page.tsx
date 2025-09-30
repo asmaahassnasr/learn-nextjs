@@ -9,7 +9,16 @@ interface IProps{
 export default async function ProductDetailsPage({params}: IProps) {
 
   const { id } = await params
-  return <div>My Product: {id}</div>
+
+  const data = await fetch(`https://dummyjson.com/products/${id}`)
+  const {title,description,thumbnail} = await data.json()
+
+  return <div>
+    <h2> ID : {id}</h2>
+    <p> {title} </p>
+    <p> {description} </p> 
+    <img src={thumbnail} alt={title}/>
+  </div>
 
 }
 
