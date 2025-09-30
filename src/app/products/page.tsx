@@ -1,14 +1,19 @@
 import Link from 'next/link'
 import React from 'react'
 
-const ProductsPage = () => {
+
+const ProductsPage = async () => {
+  
+  const data = await fetch('https://dummyjson.com/products')
+  const {products} = await data.json()
+
   return (
     <div>
-        {Array.from({length:10}, (_,idx) => (
-            <h3 key={idx}>
-                <Link href={`/products/${idx + 1}`}> Product - {idx + 1} </Link>
-            </h3>
-        ))}
+       {products.map( ({id,title} :{id:number, title:string}) => (
+        <h3 key={id}>
+          <Link href={`/products/${id}`}>ID {id} -  {title}</Link>
+        </h3>
+       ))}
     </div>
   )
 }
