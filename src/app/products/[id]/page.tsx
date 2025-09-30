@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 interface IProps{
   params:{
@@ -17,7 +18,7 @@ export default async function ProductDetailsPage({params}: IProps) {
     <h2> ID : {id}</h2>
     <p> {title} </p>
     <p> {description} </p> 
-    <img src={thumbnail} alt={title}/>
+    <Image src={thumbnail} alt={title} width={500} height={500}/>
   </div>
 
 }
