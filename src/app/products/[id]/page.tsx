@@ -10,8 +10,8 @@ interface IProps{
 
 export default async function ProductDetailsPage({params}: IProps) {
 
-  throw new Error("Something went wrong");
-  
+  // throw new Error("Something went wrong");
+
   const { id } = await params
 
   const data = await fetch(`https://dummyjson.com/products/${id}`)
