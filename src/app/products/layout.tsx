@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
   title: "E-Commerce Products Page",
-  description: "",
+  description: "this is an e-commerce demo for learning next js framework ",
 }
  
 
