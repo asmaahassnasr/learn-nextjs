@@ -5,8 +5,7 @@ import React, { Suspense } from 'react'
 
 const ProductsPage = async () => {
   
-  const data = await fetch('https://dummyjson.com/products')
-  const {products} = await data.json()
+  const products = await (await fetch('http://localhost:3000/api/products')).json()
 
   return (
     <div>
